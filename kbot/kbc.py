@@ -1,7 +1,12 @@
 from fabric.colors import *
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 if __name__=="__main__":
     print(yellow("current config file: no set"))
+    logger.info("info")
     #sbc_context.set_sbt_env(synbot_env.get_synbot_ini())
     #cmds_list = synbot_waiter.get_cmds_list()
     #if len(sys.argv) == 1 or (len(sys.argv) > 1 and sys.argv[1] in ("--help","-h")):
