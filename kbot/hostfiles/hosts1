@@ -1,0 +1,36 @@
+# 开发资源
+172.23.31.171   dev.web.yyzc
+172.23.31.167   dev.apigateway.yyzc
+172.23.31.173   dev.mysql1.yyzc
+172.23.28.124   dev.redis.yyzc
+172.23.31.171   dev.micro1.yyzc
+172.23.31.172   dev.micro2.yyzc
+
+# 测试环境
+172.23.31.210    test.web.yyzc
+172.23.31.211    test.api.yyzc
+172.23.31.212    test.micro.yyzc 
+172.23.31.213    test.redis.yyzc 
+172.23.31.214    test.mysql.yyzc 
+
+
+# 生产环境
+172.23.28.124    tools.yyzc.com
+192.168.6.70     pc.yyzc.com
+172.23.31.165    web01.opm.yyzc
+172.23.31.166    web02.opm.yyzc
+172.23.31.167    api01.opm.yyzc
+172.23.31.168    api02.opm.yyzc
+172.23.31.169    redis01.opm.yyzc
+172.23.31.170    redis02.opm.yyzc
+172.23.31.171    microserver01.opm.yyzc
+172.23.31.172    microserver02.opm.yyzc
+172.23.31.173    mysql01.opm.yyzc
+172.23.31.174    mysql02.opm.yyzc
+#webshell 配置
+172.23.11.131 caicloud-stack.caicloudprivatetest.com
+172.23.11.130 poc.caicloudprivatetest.com
+#镜像仓库配置
+172.23.11.121 cargo.caicloudprivatetest.com
+#负载均衡器配置样例
+172.23.11.132 abc.com 

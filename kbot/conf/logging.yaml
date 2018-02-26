@@ -10,18 +10,18 @@ formatters:
 handlers:
     console:
         class: logging.StreamHandler
-        level: INFO
+        level: NOTSET
         formatter: simpleFormatter
         stream: ext://sys.stdout
     file:
         class: logging.FileHandler
-        level: DEBUG 
+        level: NOTSET
         formatter: simpleFormatter
         filename: logs/app.log
         mode: a #append
     rotatingFile:
         class: logging.handlers.RotatingFileHandler
-        level: DEBUG
+        level: NOTSET
         formatter: simpleFormatter
         filename: logs/app.log
         mode: a
@@ -31,25 +31,25 @@ handlers:
 
 loggers:
     console:
-        level: INFO
+        level: NOTSET
         handlers: [console]
         formatter: simpleFormatter
         qualname: console
         propagate: 0
     file:
-        level: INFO
+        level: NOTSET
         handlers: [file]
         formatter: simpleFormatter
         qualname: file
         propagate: 0
     rotatingFile:
-        level: DEBUG 
+        level: NOTSET
         handlers: [rotatingFile]
         formatter: simpleFormatter
         qualname: rotatingFile
         propagate: 0
 
 root:
-    level: DEBUG
+    level: NOTSET
     handlers: [console, rotatingFile]
     formatter: simpleFormatter
