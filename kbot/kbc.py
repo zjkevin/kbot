@@ -7,11 +7,14 @@ import codecs
 import yaml
 import os
 import sys
-from fabric.colors import *
+#from fabric.colors import *
 
 from utils import waiter
+from utils import colorwords
 
-os.chdir(os.environ["SYNBOT_HOME"])
+from module import cn as m_cn
+
+#os.chdir(os.environ["SYNBOT_HOME"])
 
 with codecs.open('./conf/logging.yaml', 'r', 'utf-8') as logging_file:
   logging.config.dictConfig(yaml.load(logging_file))
@@ -20,17 +23,7 @@ with codecs.open('./conf/logging.yaml', 'r', 'utf-8') as logging_file:
 logger = logging.getLogger(__name__)
 
 if __name__=="__main__":
-    #print(yellow("current config file: no set"))
-    #logger.info("info")
-    #logger.debug("info")
-    #print(green("current config file: no set"))
-    #print(yellow("11111"))
-    #arg_parser = argparse.ArgumentParser()
-    #arg_parser = argparse.ArgumentParser()
-    #arg_parser.add_argument('-n', '--nfs', required=True, help="nfs list string list this:192.168.110.187:/home/hadoop/nfstest,192.168.1.1:/home/hadoop/nfs1,192.168.1.2:/home/hadoop/nfs2,192.168.1.2:/home/hadoop/nfs3", type=str)
-    #parser_args = arg_parser.parse_args()
-    #nfs_mount_check(parser_args.nfs)
-    #sbc_context.set_sbt_env(synbot_env.get_synbot_ini())
+    colorwords.tgreen(m_cn.info())
     cmds_list = waiter.get_cmds_list("./conf/help_menu.yaml")
     if len(sys.argv) == 1 or (len(sys.argv) > 1 and sys.argv[1] in ("--help","-h")):
       waiter.print_help_menu("./conf/help_menu.yaml")

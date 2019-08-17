@@ -1,27 +1,35 @@
 ---
 helps:
-  - kind: synbot status
+  - kind: kbot 状态
     cmds: 
      - cmd: -cn
-       content: show CN info
+       content: show CN info(显示控制节点机信息)
      - cmd: -hvmode
        content: cluster on hv
      - cmd: -vmmode
        content: cluster on vm
-  - kind: network setting
+  - kind: 网络设置
     cmds: 
      - cmd: -ssh
-       content: 'dispense ssh key to the HV default dispense to the host in ./hosts, or "sbc -ssh poc1,poc2" for poc1,poc2'
+       content: '分发ssh key到配置在./hosts文件中的所有受控节点机, 或通过"sbc -ssh poc1,poc2" for poc1,poc2定向受控机 '
      - cmd: -en
        content: 'edit network config file'
      - cmd: -createhosts
-       content: 'create hosts file depend on config file conf/network_conf.yml'
+       content: '创建hosts文件依赖于配置文件 conf/network_conf.yml'
      - cmd: -sendhosts
        content: 'send hosts file depend on file roles/hosts/templates/hosts, send hosts file default the [mother_land]  and [installvm] in hosts file or "sbc -sendhosts poc1,poc[4~8]" for poc1,poc4,poc5,poc6,poc7,poc8'
-  - kind: app
+  - kind: 中间件安装
     cmds: 
      - cmd: -mysql
-       content: 'will install mysql on the host'
+       content: '安装MySQL到指定的主机 -mysql -host 192.168.1.1|192.168.1.2'
+     - cmd: -redis
+       content: '安装redis到指定的主机 -redis -host 192.168.1.1|192.168.1.2'
+  - kind: 运行时安装
+    cmds: 
+     - cmd: -python36
+       content: '安装Python到指定的主机 -python36 -host 192.168.1.1|192.168.1.2'
+     - cmd: -java
+       content: '安装java到指定的主机 -java -host 192.168.1.1|192.168.1.2'
   - kind: cluster config
     cmds: 
      - cmd: -d
@@ -48,7 +56,7 @@ helps:
        content: 'rebuild cluster depend on the config file'
      - cmd: -rebuild-all
        content: 'rebuild cluster depend on the config file with syndata'
-  - kind: tools
+  - kind: 工具
     cmds:
      - cmd: -ping 
        content: 'ping hosts default the [mother_land] and [installvm] in hosts file or "sbc -ping poc1,poc[4~8]" for poc1,poc4,poc5,poc6,poc7,poc8'

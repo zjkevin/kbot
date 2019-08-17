@@ -4,28 +4,30 @@
 
 #侍者模块，提供一些支线功能
 import yaml
-from fabric.colors import *
+#from fabric.colors import *
 from kevin_utils.strlib import newline
+from utils import colorwords
 
 #打印帮助目录
 def print_help_menu(file):
     with open(file, 'rb') as f:
         d = yaml.load(f)
         for i in d["helps"]:
-            print(green(i["kind"].center(80,"*")))
+            colorwords.tDarkGray(i["kind"].center(120,"*"))
             if "cmds" in i:
                 for x in i["cmds"]:
-                    print(newline.str_newline(yellow(x["cmd"]) + "  " + green(x["content"]).strip(),80,4))
+                    colorwords.tDarkWhite(newline.str_newline(x["cmd"] + "  " + x["content"].strip(),80,4))
             if "flows" in i:
                 for x in i["flows"]:
                     content = ""
-                    print(newline.str_newline(yellow(x["title"]), 80, 4))
+                    print(newline.str_newline(x["title"], 80, 4))
                     for i,c in enumerate(x["content"].split("|")):
                         if i == len(x["content"].split("|")) - 1:
-                            content = content + green(c)
+                            content = content + c
                         else:
-                            content = content + green(c) + " " + cyan("-->") + " "
+                            content = content + c + " " + "-->" + " "
                     print(" "*4 + content)
+            print("\n")
 
 #获取帮助命令
 def get_cmds_list(file):

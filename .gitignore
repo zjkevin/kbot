@@ -1,0 +1,7 @@
+build/
+dist/
+kbot.egg-info/
+kbot/module/__pycache__/
+kbot/utils/__pycache__/colorwords.cpython-37.pyc
+kbot/utils/__pycache__/waiter.cpython-37.pyc
+pythonpackages/
