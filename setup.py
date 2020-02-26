@@ -9,5 +9,5 @@ setup(
         author='zhangjie',  # 作者
         author_email='zhangjiesoft@163.com',  # 作者邮箱
         packages=['kbot'],                 # 包
-        install_requires=['fabric','ansible==2.8.4']
+        install_requires=['fabric','ansible==2.8.8']
 )
